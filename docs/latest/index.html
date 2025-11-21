@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Kaique Souza - Curriculum</title>
+<style>
+  html,body{margin:0;height:100%;background:#111;color:#eee;font-family:Arial, sans-serif;}
+  .loader{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;}
+  .spinner{width:56px;height:56px;border:6px solid rgba(255,255,255,0.1);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  embed{width:100%;height:100vh;border:0;display:block;}
+</style>
+</head>
+<body>
+  <div class="loader">
+    <div class="spinner"></div>
+    <span>Loading CV…</span>
+  </div>
+
+  <script>
+  const pdfUrl = "/curriculum/tech/assets/cv.pdf";
+  const embed = document.createElement("embed");
+  embed.src = pdfUrl;
+  embed.type = "application/pdf";
+  embed.style.width = "100%";
+  embed.style.height = "100vh";
+  document.body.innerHTML = "";
+  document.body.appendChild(embed);
+  </script>
+</body>
+</html>
